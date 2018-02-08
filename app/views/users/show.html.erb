@@ -1,13 +1,22 @@
 <h1>My Account</h1>
 
+<h2>Account Info</h2>
+
 <p> <%= @user.first_name %></p>
 <p> <%= @user.last_name %></p>
 <p> <%= @user.email %></p>
+
+<h2>My Events</h2>
+
+<% @events.each do |event| %>
+
+  <p><%= event.title %></p>
+  <p><a href="<%= event_path(event.id) %>" class="btn btn-primary">Show Event</a></p>
+
+<% end %>
 
 <p><a href="<%= edit_user_path %>" class="btn btn-primary">Edit my account</a></p>
 
 <p><a href="<%= @user %>" class="btn btn-danger" data-confirm="Sure about this?" data-method="DELETE">Delete my account</a></p>
 
-<p><a href="<%= new_event_path %>" class="btn btn-primary">Add an event</a></p>
-
-<p><a href="<%= root_path %>" class="btn btn-default">Back To Home</a></p>
+<p><a href="<%= new_event_path %>" class="btn btn-default">Add an event</a></p>
