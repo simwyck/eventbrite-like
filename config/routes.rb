@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'creations/new'
+
   root 'static_pages#home'
 
   resources :users
