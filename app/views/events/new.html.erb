@@ -1,10 +1,12 @@
-<h1>Create a new event</h1>
+<h1>Create A New Event</h1>
+
+<p style="color:red;">All fields are required.</p>
 
 <%= form_for @event do |f| %>
 
   <div class="form-group">
 
-    <label>Title</label>
+    <label>Title<span style="color:red;">*</span></label>
 
     <%= f.text_field :title, class: 'form-control' %>
 
@@ -12,7 +14,7 @@
 
   <div class="form-group">
 
-    <label>Date</label>
+    <label>Date<span style="color:red;">*</span></label>
 
     <%= f.date_field :date, class: 'form-control' %>
 
@@ -20,7 +22,7 @@
 
   <div class="form-group">
 
-    <label>Location</label>
+    <label>Location<span style="color:red;">*</span></label>
 
     <%= f.text_field :location, class: 'form-control' %>
 
@@ -28,7 +30,7 @@
 
   <div class="form-group">
 
-    <button type="submit">Create my account</button>
+    <button type="submit">Create Event</button>
 
   </div>
 
