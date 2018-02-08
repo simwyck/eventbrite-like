@@ -1,9 +1,8 @@
 <h1><%= @event.title %></h1>
 
-<p><%= @event.date %></p>
-<p><%= @event.location %></p>
-
-<p>Event created by <%= @event.creator %></p>
+<p>Date: <%= @event.date.strftime("%d/%m/%Y") %></p>
+<p>Location: <%= @event.location %></p>
+<p>Created by: <%= @event.creator %></p>
 
 <p><a href="<%= edit_event_path %>" class="btn btn-primary">Edit my event</a></p>
 

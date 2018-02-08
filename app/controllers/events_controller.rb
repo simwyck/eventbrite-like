@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.creator = current_user.email
+    @event.creator = current_user.first_name+" "+current_user.last_name
     if @event.save
       flash[:success] = "Event successfully created!"
       redirect_to @event
@@ -42,7 +42,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
     flash[:success] = "Event successfully deleted!"
-    redirect_to root_path
+    redirect_to user_path
   end
 
   private

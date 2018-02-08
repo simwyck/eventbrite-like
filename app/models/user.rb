@@ -4,7 +4,8 @@ class User < ApplicationRecord
   has_many :creations
   has_many :events, through: :creations
 
-  before_save { self.email = email.downcase, self.last_name = last_name.upcase }
+  before_save { self.email = email.downcase }
+  before_save { self.last_name = last_name.upcase }
   #validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :first_name, presence: true, length: { minimum: 2, maximum: 100 }

@@ -44,18 +44,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :first_name, :last_name, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
 
 end
-
-
-=begin
-
-  def univers
-    if !logged_in?
-      redirect_to root_path
-    end
-
-  end
-=end
