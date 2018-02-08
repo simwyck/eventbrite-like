@@ -1,2 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>My Account</h1>
+
+<p> <%= @user.first_name %></p>
+<p> <%= @user.last_name %></p>
+<p> <%= @user.email %></p>
+
+<p><a href="<%= edit_user_path %>" class="btn btn-primary">Edit my account</a></p>
+
+<p><a href="<%= @user %>" class="btn btn-danger" data-confirm="Sure about this?" data-method="DELETE">Delete my account</a></p>
+
+<p><a href="<%= new_event_path %>" class="btn btn-primary">Add an event</a></p>
+
+<p><a href="<%= root_path %>" class="btn btn-default">Back To Home</a></p>

@@ -1,2 +1,13 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>All Users</h1>
+
+<h2>Warning: For admins only</h2>
+
+<% @users.each do |user| %>
+
+  <p><%= user.email %></p>
+  <p><%= user.first_name %> <%= user.last_name %></p>
+  <p><a href="<%= user_path(user.id) %>" class="btn btn-primary">Show User</a></p>
+
+<% end %>
+
+<p><a href="<%= new_user_path %>" class="btn btn-default">Add New User</a></p>
